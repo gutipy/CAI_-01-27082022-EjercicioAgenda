@@ -10,11 +10,7 @@ namespace ProyectoAgenda.InterfazConsola
     {
         static void Main(string[] args)
         {
-            Contacto C1 = new Contacto("agu", "guti", "111", "calle falsa 123", DateTime.Now.AddYears(-25));
-
-            Console.WriteLine(C1.ToString());
-
-            Console.WriteLine(C1.Edad());
+            Contacto C1 = new Contacto("Agustín", "Gutiérrez", "1234-5678", "Calle 123", DateTime.Now.AddYears(-25));
 
             Console.ReadKey();
         }

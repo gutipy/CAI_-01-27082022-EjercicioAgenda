@@ -80,11 +80,19 @@ namespace ProyectoAgenda.InterfazConsola
         //Función que calcula la edad de un contacto
         public int Edad()
         {
+            //Declaración de variables
             int edad;
 
+            //Calculo la edad
             edad = (DateTime.Now - _fechaNacimiento).Days / 365;
 
             return edad;
+        }
+
+        public void Llamar()
+        {
+            //Cada vez que se invoca este procedimiento, ergo se realiza una llamada, se suma 1 al contador de llamadas
+            _llamadas++;
         }
     }
 }
