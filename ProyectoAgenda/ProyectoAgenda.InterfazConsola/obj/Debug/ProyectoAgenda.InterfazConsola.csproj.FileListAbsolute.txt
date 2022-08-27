@@ -1,0 +1,8 @@
+D:\Documents\GitHub\CAI_-01-27082022-EjercicioAgenda\ProyectoAgenda\ProyectoAgenda.InterfazConsola\bin\Debug\ProyectoAgenda.InterfazConsola.exe.config
+D:\Documents\GitHub\CAI_-01-27082022-EjercicioAgenda\ProyectoAgenda\ProyectoAgenda.InterfazConsola\bin\Debug\ProyectoAgenda.InterfazConsola.exe
+D:\Documents\GitHub\CAI_-01-27082022-EjercicioAgenda\ProyectoAgenda\ProyectoAgenda.InterfazConsola\bin\Debug\ProyectoAgenda.InterfazConsola.pdb
+D:\Documents\GitHub\CAI_-01-27082022-EjercicioAgenda\ProyectoAgenda\ProyectoAgenda.InterfazConsola\obj\Debug\ProyectoAgenda.InterfazConsola.csproj.AssemblyReference.cache
+D:\Documents\GitHub\CAI_-01-27082022-EjercicioAgenda\ProyectoAgenda\ProyectoAgenda.InterfazConsola\obj\Debug\ProyectoAgenda.InterfazConsola.csproj.SuggestedBindingRedirects.cache
+D:\Documents\GitHub\CAI_-01-27082022-EjercicioAgenda\ProyectoAgenda\ProyectoAgenda.InterfazConsola\obj\Debug\ProyectoAgenda.InterfazConsola.csproj.CoreCompileInputs.cache
+D:\Documents\GitHub\CAI_-01-27082022-EjercicioAgenda\ProyectoAgenda\ProyectoAgenda.InterfazConsola\obj\Debug\ProyectoAgenda.InterfazConsola.exe
+D:\Documents\GitHub\CAI_-01-27082022-EjercicioAgenda\ProyectoAgenda\ProyectoAgenda.InterfazConsola\obj\Debug\ProyectoAgenda.InterfazConsola.pdb
