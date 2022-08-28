@@ -89,9 +89,9 @@ namespace ProyectoAgenda.InterfazConsola
             return edad;
         }
 
+        //Procedimiento que realiza una llamada y suma 1 al contador de llamadas
         public void Llamar()
         {
-            //Cada vez que se invoca este procedimiento, ergo se realiza una llamada, se suma 1 al contador de llamadas
             _llamadas++;
         }
     }
