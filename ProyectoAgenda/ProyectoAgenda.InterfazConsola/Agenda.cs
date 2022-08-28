@@ -116,5 +116,11 @@ namespace ProyectoAgenda.InterfazConsola
                 _contactos.RemoveAll(C => C._codigoContacto == codigoContacto);
             }
         }
+
+        //Función para traer el contacto frecuente (el que mas veces ha sido llamado)
+        public Contacto TraerContactoFrecuente()
+        {
+
+        }
     }
 }
