@@ -44,10 +44,14 @@
     <Compile Include="Entidades\Agenda.cs" />
     <Compile Include="Entidades\Contacto.cs" />
     <Compile Include="Exceptions\AgendaLlenaException.cs" />
+    <Compile Include="Exceptions\FechaMayorQueHoyException.cs" />
+    <Compile Include="Exceptions\FormatoFechaInvalidoException.cs" />
     <Compile Include="Exceptions\OpcionInvalidaException.cs" />
     <Compile Include="Exceptions\OpcionVaciaException.cs" />
     <Compile Include="Exceptions\CodigoContactoNoExisteException.cs" />
+    <Compile Include="Exceptions\TelefonoInvalidoException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Validaciones\ValidacionesInput.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
