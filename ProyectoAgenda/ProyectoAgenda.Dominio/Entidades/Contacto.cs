@@ -5,11 +5,12 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProyectoAgenda.InterfazConsola
+namespace ProyectoAgenda.Dominio
 {
     public class Contacto
     {
         //Atributos de la clase Contacto
+        private int _codigoContacto;
         private string _nombre;
         private string _apellido;
         private string _telefono;
@@ -18,8 +19,9 @@ namespace ProyectoAgenda.InterfazConsola
         private int _llamadas;
 
         //Constructor de la clase Contacto
-        public Contacto(string nombre, string apellido, string telefono, string direccion, DateTime fechaNacimiento)
+        public Contacto(int codigoContacto, string nombre, string apellido, string telefono, string direccion, DateTime fechaNacimiento)
         {
+            _codigoContacto = codigoContacto;
             _nombre = nombre;
             _apellido = apellido;
             _telefono = telefono;
@@ -28,6 +30,13 @@ namespace ProyectoAgenda.InterfazConsola
         }
 
         //Propiedades de la clase Contacto
+        public int Codigo
+        {
+            get
+            {
+                return _codigoContacto;
+            }
+        }
         public string Nombre
         {
             get

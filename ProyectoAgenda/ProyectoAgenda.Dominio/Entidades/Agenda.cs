@@ -3,19 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ProyectoAgenda.Dominio;
+using ProyectoAgenda.Dominio.Exceptions;
 
-namespace ProyectoAgenda.InterfazConsola
+namespace ProyectoAgenda.Dominio
 {
     public class Agenda
     {
         //Atributos de la clase Agenda
         private string _nombre;
         private string _tipo;
-        List<Contacto> _contactos = new List<Contacto>();
+        private List<Contacto> _contactos = new List<Contacto>();
         private int _cantidadMaximaContactos;
 
         //Constructor de la clase Agenda
-        public Agenda(string nombre, string tipo, Contacto contactos)
+        public Agenda(string nombre, string tipo)
         {
             _nombre = nombre;
             _tipo = tipo;
@@ -49,50 +51,25 @@ namespace ProyectoAgenda.InterfazConsola
             }
         }
 
+        public List<Contacto> Contactos
+        {
+            get
+            {
+                return _contactos;
+            }
+        }
+
         //Procedimiento que permite agregar un contacto a la agenda
         public void AgregarContacto(Contacto c)
         {
             if( _contactos.Count < _cantidadMaximaContactos)
             {
-                //Declaración de variables
-                string nombre;
-                string apellido;
-                string telefono;
-                string direccion;
-                DateTime fechaNacimiento;
-
-                Console.WriteLine("Ingrese los siguientes datos para agregar un contacto");
-
-                Console.WriteLine("Nombre:");
-                nombre = Console.ReadLine();
-
-                Console.WriteLine("Apellido:");
-                apellido = Console.ReadLine();
-
-                Console.WriteLine("Teléfono:");
-                telefono = Console.ReadLine();
-
-                Console.WriteLine("Dirección:");
-                direccion = Console.ReadLine();
-
-                Console.WriteLine("Fecha de nacimiento:");
-                fechaNacimiento = Convert.ToDateTime(Console.ReadLine());
-
-                //Creo el contacto con los valores que ingresó el usuario
-                Contacto C1 = new Contacto(
-                    nombre,
-                    apellido,
-                    telefono,
-                    direccion,
-                    fechaNacimiento
-                    );
-
                 //Agrego los datos que ingresó el usuario a la lista dinámica que almacena los contactos
                 _contactos.Add(c);
             }
             else
             {
-                Console.WriteLine("ERROR! La agenda ha alcanzo la cantidad máxima de " + _cantidadMaximaContactos + " contactos");
+                throw new AgendaLlenaException(CantidadMaximaContactos);
             }
 
         }
@@ -100,27 +77,36 @@ namespace ProyectoAgenda.InterfazConsola
         //Procedimiento que permite eliminar un contacto de la agenda
         public void EliminarContacto(int codigoContacto)
         {
-            //Pido al usuario que ingrese el código de contacto a eliminar
-            Console.WriteLine("Ingrese el código del contacto que desea eliminar:");
-            codigoContacto = Convert.ToInt32(Console.ReadLine());
-
             //Si el código ingresado no es válido le tira un cartel de error
-            if (_contactos.Find(C => C._codigoContacto == codigoContacto) == null)
+            if (_contactos.Find(C => C.Codigo == codigoContacto) == null)
             {
-                Console.WriteLine("El código de contacto " + codigoContacto + " es inválido");
+                throw new CodigoContactoNoExisteException(codigoContacto);
             }
 
             //Le indico que remueva a todos los contactos que tengan el mismo codigo ingresado por el usuario
             else
             {
-                _contactos.RemoveAll(C => C._codigoContacto == codigoContacto);
+                _contactos.RemoveAll(C => C.Codigo == codigoContacto);
             }
         }
 
         //Función para traer el contacto frecuente (el que mas veces ha sido llamado)
-        public Contacto TraerContactoFrecuente()
+        public void TraerContactoFrecuente()
         {
+            //Declaración de variables
+            int _maximasLlamadas = 0;
+            int _idContacto = 0;
 
+            foreach(Contacto c in _contactos)
+            {
+                if(c.Llamadas > _maximasLlamadas)
+                {
+                    _maximasLlamadas = c.Llamadas;
+                    _idContacto = c.Codigo;
+                }
+            }
+
+            Console.WriteLine("El contacto con ID: " + _idContacto + " tiene un total de " + _maximasLlamadas + " llamadas");
         }
     }
 }

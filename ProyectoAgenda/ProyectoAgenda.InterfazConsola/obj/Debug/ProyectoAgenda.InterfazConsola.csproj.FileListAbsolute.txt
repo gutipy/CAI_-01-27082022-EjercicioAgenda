@@ -6,3 +6,6 @@ D:\Documents\GitHub\CAI_-01-27082022-EjercicioAgenda\ProyectoAgenda\ProyectoAgen
 D:\Documents\GitHub\CAI_-01-27082022-EjercicioAgenda\ProyectoAgenda\ProyectoAgenda.InterfazConsola\obj\Debug\ProyectoAgenda.InterfazConsola.csproj.CoreCompileInputs.cache
 D:\Documents\GitHub\CAI_-01-27082022-EjercicioAgenda\ProyectoAgenda\ProyectoAgenda.InterfazConsola\obj\Debug\ProyectoAgenda.InterfazConsola.exe
 D:\Documents\GitHub\CAI_-01-27082022-EjercicioAgenda\ProyectoAgenda\ProyectoAgenda.InterfazConsola\obj\Debug\ProyectoAgenda.InterfazConsola.pdb
+D:\Documents\GitHub\CAI_-01-27082022-EjercicioAgenda\ProyectoAgenda\ProyectoAgenda.InterfazConsola\bin\Debug\ProyectoAgenda.Dominio.dll
+D:\Documents\GitHub\CAI_-01-27082022-EjercicioAgenda\ProyectoAgenda\ProyectoAgenda.InterfazConsola\bin\Debug\ProyectoAgenda.Dominio.pdb
+D:\Documents\GitHub\CAI_-01-27082022-EjercicioAgenda\ProyectoAgenda\ProyectoAgenda.InterfazConsola\obj\Debug\ProyectoAgenda.InterfazConsola.csproj.CopyComplete

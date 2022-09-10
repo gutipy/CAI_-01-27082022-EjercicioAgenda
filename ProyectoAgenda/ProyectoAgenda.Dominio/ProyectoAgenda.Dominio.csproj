@@ -4,17 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{12CD97F7-A846-42CB-8D47-DCA363D2F60B}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>ProyectoAgenda.InterfazConsola</RootNamespace>
-    <AssemblyName>ProyectoAgenda.InterfazConsola</AssemblyName>
+    <ProjectGuid>{96C370E1-E9F0-43D7-B4C8-1EC4EEE5352B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ProyectoAgenda.Dominio</RootNamespace>
+    <AssemblyName>ProyectoAgenda.Dominio</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +23,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -43,17 +41,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Entidades\Agenda.cs" />
+    <Compile Include="Entidades\Contacto.cs" />
+    <Compile Include="Exceptions\AgendaLlenaException.cs" />
+    <Compile Include="Exceptions\OpcionInvalidaException.cs" />
+    <Compile Include="Exceptions\OpcionVaciaException.cs" />
+    <Compile Include="Exceptions\CodigoContactoNoExisteException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ProyectoAgenda.Dominio\ProyectoAgenda.Dominio.csproj">
-      <Project>{96c370e1-e9f0-43d7-b4c8-1ec4eee5352b}</Project>
-      <Name>ProyectoAgenda.Dominio</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
