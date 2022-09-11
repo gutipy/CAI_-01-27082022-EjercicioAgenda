@@ -24,17 +24,19 @@ namespace ProyectoAgenda.InterfazConsola
 
             //Contacto C4 = new Contacto(4, "Graciela", "Andreacchio", "1234-5678", "Calle 123", DateTime.Now.AddYears(-61));
 
+
+            Agenda agendaElectronica = new Agenda("Mi agenda", "Electrónica");
+
+            //agendaElectronica.AgregarContacto(C1);
+            //agendaElectronica.AgregarContacto(C2);
+            //agendaElectronica.AgregarContacto(C3);
+            //agendaElectronica.AgregarContacto(C4);
+
+            bool consolaActiva = true;
+
+
             try
             {
-                Agenda agendaElectronica = new Agenda("Mi agenda", "Electrónica");
-
-                //agendaElectronica.AgregarContacto(C1);
-                //agendaElectronica.AgregarContacto(C2);
-                //agendaElectronica.AgregarContacto(C3);
-                //agendaElectronica.AgregarContacto(C4);
-
-                bool consolaActiva = true;
-
                 while (consolaActiva)
                 {
                     //Despliego en pantalla las opciones para que el usuario decida
@@ -54,13 +56,23 @@ namespace ProyectoAgenda.InterfazConsola
                             //Agrego un contacto a la agenda
                             Agregar(agendaElectronica);
                             break;
+                        case "3":
+                            //Elimino un contacto de la agenda
+                            Eliminar(agendaElectronica);
+                            break;
+                        case "4":
+                            //Salir del programa
+                            Salir();
+                            break;
                     }
                 }
+            
             }
             catch(Exception ex)
             {
-                Console.WriteLine("Error general");
+                Console.WriteLine(ex.Message);
             }
+
             Console.ReadKey();
         }
 
@@ -76,15 +88,29 @@ namespace ProyectoAgenda.InterfazConsola
                 ;
         }
 
-        
+
 
         //Método para listar todos los contactos que posee la agenda y mostrarlos en pantalla
         public static void Listar(Agenda agenda)
         {
-            foreach(Contacto c in agenda.Contactos)
+            if (agenda.Contactos.Count == 0)
             {
-                Console.WriteLine (c.Codigo + " " + c.Nombre + " " + c.Apellido + " " + c.Telefono + " " + c.Direccion + " " + c.FechaNacimiento);
+                Console.WriteLine("La agenda se encuentra vacía, presione Enter para elegir otra opción");
+                Console.ReadKey();
+                Console.Clear();
             }
+            else
+            {
+                foreach (Contacto c in agenda.Contactos)
+                {
+                    Console.WriteLine(c.Codigo + " " + c.Nombre + " " + c.Apellido + " " + c.Telefono + " " + c.Direccion + " " + c.FechaNacimiento);
+                }
+
+                Console.WriteLine("Presione Enter para elegir otra opción");
+                Console.ReadKey();
+                Console.Clear();
+            }
+
         }
 
         //Método para agregar un nuevo contacto a la agenda
@@ -100,9 +126,10 @@ namespace ProyectoAgenda.InterfazConsola
             DateTime _fechaNacimientoValidada = DateTime.Now;
             bool flag;
 
-
+            //Asignación del código de contacto de manera incremental
             _codigoContacto = agendaElectronica.Contactos.Count + 1;
 
+            //Pido al usuario que ingrese los datos de contacto y a la vez valido cada input ingresado
             do
             {
                 Console.WriteLine("Ingrese el nombre del contacto");
@@ -149,6 +176,38 @@ namespace ProyectoAgenda.InterfazConsola
                 );
 
             agendaElectronica.AgregarContacto(c);
+
+            Console.WriteLine("El contacto fue agregado exitosamente a la agenda, presione Enter para elegir otra opción.");
+            Console.ReadKey();
+            Console.Clear();
+        }
+
+        //Método para eliminar un contacto de la agenda
+        public static void Eliminar(Agenda agenda)
+        {
+            //Declaración de variables
+            string _codigo;
+            int _codigoValidado = 0;
+            bool flag;
+
+            //Pido al usuario que ingrese el código de contacto y a la vez valido el input ingresado
+            do
+            {
+                Console.WriteLine("Ingrese el código del contacto que desea eliminar");
+                _codigo = Console.ReadLine();
+                flag = ValidacionesInput.FuncionValidarNumero(_codigo, ref _codigoValidado);
+            } while (flag == false);
+
+            //Le paso el código de contacto validado a la clase Agenda para que busque en la lista de contactos y si existe dicho contacto que lo elimine
+            agenda.EliminarContacto(_codigoValidado);
+        }
+
+        public static void Salir()
+        {
+            Console.WriteLine("Usted ha salido de la agenda, presione Enter");
+            Console.ReadKey();
+
+            Environment.Exit(0);
         }
     }
 }

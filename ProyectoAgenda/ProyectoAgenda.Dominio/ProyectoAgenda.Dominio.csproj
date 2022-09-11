@@ -44,8 +44,10 @@
     <Compile Include="Entidades\Agenda.cs" />
     <Compile Include="Entidades\Contacto.cs" />
     <Compile Include="Exceptions\AgendaLlenaException.cs" />
+    <Compile Include="Exceptions\CodigoMenorACeroException.cs" />
     <Compile Include="Exceptions\FechaMayorQueHoyException.cs" />
     <Compile Include="Exceptions\FormatoFechaInvalidoException.cs" />
+    <Compile Include="Exceptions\FormatoInvalidoException.cs" />
     <Compile Include="Exceptions\OpcionInvalidaException.cs" />
     <Compile Include="Exceptions\OpcionVaciaException.cs" />
     <Compile Include="Exceptions\CodigoContactoNoExisteException.cs" />

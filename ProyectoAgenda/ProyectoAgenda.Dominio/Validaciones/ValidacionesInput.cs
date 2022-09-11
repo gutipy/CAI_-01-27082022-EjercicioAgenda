@@ -21,7 +21,7 @@ namespace ProyectoAgenda.Dominio.Validaciones
 
                 if (string.IsNullOrEmpty(opcion))
                 {
-                    throw new OpcionVaciaException();
+                    Console.WriteLine("ERROR! La opción ingresada no puede ser vacío, intente nuevamente.");
                 }
                 else if (opcion == "1" || opcion == "2" || opcion == "3" || opcion == "4")
                 {
@@ -29,7 +29,7 @@ namespace ProyectoAgenda.Dominio.Validaciones
                 }
                 else
                 {
-                    throw new OpcionInvalidaException(opcion);
+                    Console.WriteLine("ERROR! La opción " + opcion + " no es una opción válida, intente nuevamente.");
                 }
 
             } while (flag == false);
@@ -44,7 +44,7 @@ namespace ProyectoAgenda.Dominio.Validaciones
 
             if (string.IsNullOrEmpty(cadena))
             {
-                throw new OpcionVaciaException();
+                Console.WriteLine("ERROR! La opción ingresada no puede ser vacío, intente nuevamente.");
             }
             else
             {
@@ -62,17 +62,12 @@ namespace ProyectoAgenda.Dominio.Validaciones
             //Validación de que el teléfono ingresado no sea vacío
             if (string.IsNullOrEmpty(telefono))
             {
-                throw new OpcionVaciaException();
+                Console.WriteLine("ERROR! La opción ingresada no puede ser vacío, intente nuevamente.");
             }
             //Validación de que el teléfono ingresado no posea más de 15 números
             else if (telefono.Length > 15)
             {
-                throw new TelefonoInvalidoException(telefono);
-            }
-            //Validación de que el teléfono ingresado no posea más de 15 números
-            else if (!Regex.IsMatch(telefono, "^[a-zA-Z]*$"))
-            {
-                throw new TelefonoInvalidoException(telefono);
+                Console.WriteLine("ERROR! El número " + telefono + " no puede poseer más de 15 dígitos, intente nuevamente.");
             }
             else
             {
@@ -88,11 +83,31 @@ namespace ProyectoAgenda.Dominio.Validaciones
 
             if (!DateTime.TryParse(fecha, out fechaValidada))
             {
-                throw new FormatoFechaInvalidoException();
+                Console.WriteLine("El campo Fecha de nacimiento debe tener un formato válido del tipo dd/mm/aaaa, intente nuevamente.");
             }
             else if (fechaValidada > DateTime.Now)
             {
-                throw new FechaMayorQueHoyException();
+                Console.WriteLine("La fecha ingresada no puede ser superior al día de hoy, intente nuevamente.");
+            }
+            else
+            {
+                flag = true;
+            }
+
+            return flag;
+        }
+
+        public static bool FuncionValidarNumero(string numero, ref int numeroValidado)
+        {
+            bool flag = false;
+
+            if (!int.TryParse(numero, out numeroValidado))
+            {
+                Console.WriteLine("El código ingresado debe ser de tipo numérico, intente nuevamente");
+            }
+            else if (numeroValidado <= 0)
+            {
+                Console.WriteLine("El código ingresado debe ser mayor a cero, intente nuevamente");
             }
             else
             {
