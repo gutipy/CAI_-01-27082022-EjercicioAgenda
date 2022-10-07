@@ -16,13 +16,13 @@ namespace ProyectoAgenda.InterfazConsola
             //Declaración de variables
             string _opcionMenu = "";
 
-            //Contacto C1 = new Contacto(1, "Agustín", "Gutiérrez", "1234-5678", "Calle 123", DateTime.Now.AddYears(-25));
+            //Contacto C1 = new Contacto(1, "Agustín", "Apellido1", "1234-5678", "Calle 123", DateTime.Now.AddYears(-25));
 
-            //Contacto C2 = new Contacto(2, "Tomás", "Gutiérrez", "1234-5678", "Calle 123", DateTime.Now.AddYears(-23));
+            //Contacto C2 = new Contacto(2, "Tomás", "Apellido2", "1234-5678", "Calle 123", DateTime.Now.AddYears(-23));
 
-            //Contacto C3 = new Contacto(3, "Mariano", "Gutiérrez", "1234-5678", "Calle 123", DateTime.Now.AddYears(-65));
+            //Contacto C3 = new Contacto(3, "Mariano", "Apellido3", "1234-5678", "Calle 123", DateTime.Now.AddYears(-65));
 
-            //Contacto C4 = new Contacto(4, "Graciela", "Andreacchio", "1234-5678", "Calle 123", DateTime.Now.AddYears(-61));
+            //Contacto C4 = new Contacto(4, "Graciela", "Apellido4", "1234-5678", "Calle 123", DateTime.Now.AddYears(-61));
 
 
             Agenda agendaElectronica = new Agenda("Mi agenda", "Electrónica");
